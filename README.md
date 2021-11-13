@@ -2,6 +2,10 @@
 
 Created by Haowen Wang (王浩闻), Yicong Wang (王逸聪) and Jian Zhao (赵健) from Shanghai Jiao Tong University.
 
+![Version 1: Single and Online Detection](https://github.com/wang-h-w/traffic-sign-detection/blob/master/Single_and_Online_Detection.png)
+
+![Version2: Environment Detection](https://github.com/wang-h-w/traffic-sign-detection/blob/master/Environment_Detection.png)
+
 ## Introduction
 **This is a course design project. *Info: Computer Graphics, ME6180-020-M01, Shanghai Jiao Tong University.***
 
