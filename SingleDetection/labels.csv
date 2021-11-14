@@ -1,0 +1,59 @@
+ClassId,Name
+0,Speed limit (5km/h)
+1,Speed limit (15km/h)
+2,Speed limit (30km/h)
+3,Speed limit (40km/h)
+4,Speed limit (50km/h)
+5,Speed limit (60km/h)
+6,Speed limit (70km/h)
+7,Speed limit (80km/h)
+8,No straight or left
+9,No straight or right
+10,No straight
+11,No left
+12,No left or right
+13,No right
+14,No overtake
+15,No U-turn
+16,No vehicle
+17,No honk
+18,End of speed limit (40km/h)
+19,End of speed limit (50km/h)
+20,Go straight or right
+21,Go straight
+22,Turn left
+23,Turn left or right
+24,Turn right
+25,Left driving
+26,Right driving
+27,Roundabout mandatory
+28,Vehicle lane
+29,Honk
+30,Bicycle lane
+31,U-turn
+32,Detour left or right
+33,Traffic lights
+34,Take caution
+35,Pedestrian crossing caution
+36,Bicycle caution
+37,School caution
+38,Sharp right turn
+39,Sharp left turn
+40,Down steep slope
+41,Up steep slope
+42,Slow down
+43,T-Crossroads right
+44,T-Crossroads left
+45,Village caution
+46,S-turn
+47,Unguarded railway crossing
+48,Road repair
+49,Curves Ahead
+50,Guarded railway crossing
+51,Accident black spot
+52,STOP
+53,No Entry
+54,No parking
+55,No cars
+56,YIELD
+57,Stop for Inspection
