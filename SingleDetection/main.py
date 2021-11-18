@@ -1,6 +1,6 @@
 """
 Author: Haowen Wang
-Last Edit: 2021/11/14
+Last Edit: 2021/11/18
 """
 
 from PyQt5.QtWidgets import QApplication, QMessageBox
@@ -19,8 +19,12 @@ class TSD_single:
         self.ui.btn_load.clicked.connect(self.loadGraphics)
         self.ui.btn_show.clicked.connect(self.detect)
         self.ui.btn_video.clicked.connect(self.video)
+        self.ui.btn_load_t.clicked.connect(self.loadGraphics)
+        self.ui.btn_show_t.clicked.connect(self.detect_cut)
         self.loadPath = None
         self.timer = QTimer(self.ui)
+        self.poss_num = 5 # number of possible cuts
+        self.ui.tab_operations.setCurrentIndex(0)
 
     def loadGraphics(self):
         self.timer.stop()
@@ -29,15 +33,36 @@ class TSD_single:
         self.tool.disGraphics(pixmap)
 
     def detect(self):
-        if self.loadPath is None:
-            QMessageBox.critical(self.ui, 'Input error', 'Please load an image first!')
-        elif self.loadPath == '':
-            QMessageBox.critical(self.ui, 'Input error', "Please choose an image from the folder!")
-        elif self.loadPath == 'video':
-            QMessageBox.warning(self.ui, 'On-line detect warning', "On-line detect is already in use.\nResults are shown in \"Detect Result\" area!")
-        else:
+        check = self.tool.checkLoadPath(self.loadPath)
+        if check:
             figure = cv2.imread(self.loadPath)
             detect_img, className, probabilityValue = TSD_single_predict(figure)
+            detect_img = cv2.cvtColor(detect_img, cv2.COLOR_BGR2RGB)
+            x = detect_img.shape[1]
+            y = detect_img.shape[0]
+            frame = QImage(detect_img, x, y, QImage.Format_RGB888)
+            pixmap = self.tool.img2pix(frame)
+            self.tool.disGraphics(pixmap)
+            self.tool.disResults(className, probabilityValue)
+
+    def detect_cut(self):
+        check = self.tool.checkLoadPath(self.loadPath)
+        if check:
+            option = self.ui.comboBox_cut.currentText()
+            figure = cv2.imread(self.loadPath)
+            cut = self.tool.cutSign(figure, option, self.poss_num)
+            detect_img_list = []
+            className_list = []
+            probabilityValue_list = []
+            for i in range(self.poss_num):
+                d, c, p = TSD_single_predict(cut[i])
+                detect_img_list.append(d)
+                className_list.append(c)
+                probabilityValue_list.append(p)
+            output_idx = probabilityValue_list.index(max(probabilityValue_list, key=abs))
+            detect_img = detect_img_list[output_idx]
+            className = className_list[output_idx]
+            probabilityValue = probabilityValue_list[output_idx]
             detect_img = cv2.cvtColor(detect_img, cv2.COLOR_BGR2RGB)
             x = detect_img.shape[1]
             y = detect_img.shape[0]
