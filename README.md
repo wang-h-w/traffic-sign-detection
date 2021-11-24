@@ -27,20 +27,19 @@ To create/activate/exit Anaconda environment:
         conda deactivate
 
 ### 1. Single and Online Detection
-
 The code has been tested with Python 3.9, Tensorflow 2.6.0, PyQt 5.15.6 on macOS Big Sur, Windows 10 and Windows 11.
 
 ### 2. Environment Detection
 The code has been tested with Python 3.7, Tensorflow 1.15.0, PyQt 5.15.6 on macOS Big Sur, Windows 10 and Windows 11.
 
 ## Usage
-### Use pre-trained model
+### 1. Use pre-trained model
 To use pre-trained model and show PyQt5 interface:
 
         python ./SingleDetection/main.py
         python ./EnvDetection/main.py
 
-### Train on your own data
+### 2. Train on your own data
 #### Single and Online Detection Version
 After you prepare the dataset, you can simply run:
 
@@ -57,6 +56,11 @@ After you prepare the dataset, you can run:
 After trained the cascaded network, you have to adapt the files in data_providers folder to fit your dataset, then run:
 
         python ./SingleDetection/TSD_env_train.py
+
+### 3. Run on your Windows! (NEW!)
+No need to setup the environment. We now provide an .exe application that can be run directly on Windows 10/11. Only for **SingleDetection**.
+
+You can download our application from: https://jbox.sjtu.edu.cn/l/xFFNV8. Just click **main.exe** and detect the sign!
 
 ## License
 
