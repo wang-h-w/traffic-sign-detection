@@ -1,4 +1,4 @@
-# Traffic Sign Detection Base on PyQt5 and OpenCV
+# Traffic Sign Detection Based on PyQt5 and OpenCV
 
 Created by Haowen Wang (王浩闻), Yicong Wang (王逸聪) and Jian Zhao (赵健) from Shanghai Jiao Tong University.
 
