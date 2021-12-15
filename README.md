@@ -11,6 +11,8 @@ Created by Haowen Wang (王浩闻), Yicong Wang (王逸聪) and Jian Zhao (赵�
 
 Detect traffic sign using OpenCV and Python. Realize UI interface and human-computer interaction through PyQt5. Two versions are currently available: Single and Online Detection &amp; Environment Detection.
 
+Demo videos can be downloaded from this link: https://jbox.sjtu.edu.cn/l/v1Xvbl
+
 Our project implement and improve the following model architecture:
 > Single Detection:  https://www.youtube.com/watch?v=SWaYRyi0TTs, https://github.com/Fafa-DL/Opencv-project
 > 
