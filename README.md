@@ -28,6 +28,12 @@ To create/activate/exit Anaconda environment:
         conda activate {ENV_NAME}
         conda deactivate
 
+### 0. Install Requirements
+The requirements of SingleDetection and EnvDetection is different. Use following command to install:
+
+        pip install -r ./SingleDetection/requirements_single.txt
+        pip install -r ./EnvDetection/requirements_env.txt
+
 ### 1. Single and Online Detection
 The code has been tested with Python 3.9, Tensorflow 2.6.0, PyQt 5.15.6 on macOS Big Sur, Windows 10 and Windows 11.
 
